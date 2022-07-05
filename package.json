@@ -1,0 +1,35 @@
+{
+  "name": "ilviwyn",
+  "version": "1.0.0",
+  "description": "A discord bot open to learn.",
+  "main": "index.js",
+  "engines": {
+    "node": ">=16.15.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lofty-Brambles/Ilviwyn.git"
+  },
+  "keywords": [],
+  "author": "Lofty Brambles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lofty-Brambles/Ilviwyn/issues"
+  },
+  "homepage": "https://github.com/Lofty-Brambles/Ilviwyn#readme",
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "date-fns": "^2.28.0",
+    "dotenv": "^16.0.1"
+  }
+}
