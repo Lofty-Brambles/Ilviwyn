@@ -39,7 +39,7 @@ const logs = (content, type) => {
 	}
 };
 
-exports = {
+module.exports = {
 	log: (...args) => logs(args, "log"),
 	warn: (...args) => logs(args, "warn"),
 	debug: (...args) => logs(args, "debug"),
