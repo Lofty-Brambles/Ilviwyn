@@ -2,7 +2,8 @@
   "name": "ilviwyn",
   "version": "1.0.0",
   "description": "A discord bot open to learn.",
-  "main": "index.js",
+  "main": "src/main.js",
+  "private": true,
   "engines": {
     "node": ">=16.15.1"
   },
@@ -15,7 +16,8 @@
   },
   "keywords": [],
   "author": "Lofty Brambles",
-  "license": "ISC",
+  "license": "MIT",
+  "contributors": [],
   "bugs": {
     "url": "https://github.com/Lofty-Brambles/Ilviwyn/issues"
   },
