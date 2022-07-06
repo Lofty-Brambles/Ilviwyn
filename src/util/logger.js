@@ -1,12 +1,5 @@
 /* eslint-disable no-console */
-const {
-	cyan,
-	gray,
-	yellow,
-	magenta,
-	whiteBright,
-	greenBright,
-} = require("chalk");
+const { cyan, gray, yellow, magenta, red, greenBright } = require("chalk");
 const { format } = require("date-fns");
 
 const titlize = str => str[0].toUpperCase() + str.slice(1);
@@ -24,10 +17,8 @@ const logs = (content, type) => {
 		case "debug":
 			console.log(`${timestamp} ${magenta(titlize(type))} - ${content}`);
 			break;
-		case "cmd":
-			console.log(
-				`${timestamp} ${whiteBright(titlize(type))} - ${content}`
-			);
+		case "error":
+			console.log(`${timestamp} ${red(titlize(type))} - ${content}`);
 			break;
 		case "ready":
 			console.log(
@@ -43,6 +34,6 @@ module.exports = {
 	log: (...args) => logs(args, "log"),
 	warn: (...args) => logs(args, "warn"),
 	debug: (...args) => logs(args, "debug"),
-	cmd: (...args) => logs(args, "cmd"),
+	error: (...args) => logs(args, "error"),
 	ready: (...args) => logs(args, "ready"),
 };
