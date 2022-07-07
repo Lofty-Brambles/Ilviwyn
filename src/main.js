@@ -10,8 +10,8 @@ const Ilviwyn = new Client();
 	const interactions = [
 		"events",
 		"commands",
-		"context-menus", // TODO
-		"buttons", // TODO
+		"context-menus",
+		"buttons",
 		"modals", // TODO
 		"select-menus", // TODO
 	];

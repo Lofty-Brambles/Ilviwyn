@@ -5,7 +5,7 @@ const readdir = require("util").promisify(require("fs").readdir);
 
 module.exports = async client => {
 	client.logger.log(
-		"=-=-=-=-=- Context Menus loadting in Collection -=-=-=-=-="
+		"=-=-=-=-=- Context Menus loading in Collection -=-=-=-=-="
 	);
 	let counter = 0;
 
