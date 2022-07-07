@@ -15,14 +15,13 @@ module.exports = async client => {
 
 	for (let i = 0; i < cmdDir.length; i++) {
 		const cmdFolder = cmdDir[i];
-		counter += cmdFolder;
 
 		const cmdFolders = (
 			await readdir(`./src/interactions/commands/${cmdFolder}`)
 		).filter((value, index, array) => array.indexOf(value) === index);
 
 		for (let j = 0; j < cmdFolders.length; j++) {
-			const cmdFile = cmdFolders[i];
+			const cmdFile = cmdFolders[j];
 			counter++;
 
 			const cmd =
