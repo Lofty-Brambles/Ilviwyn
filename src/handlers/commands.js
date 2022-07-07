@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 const readdir = require("util").promisify(require("fs").readdir);
@@ -16,33 +17,30 @@ module.exports = async client => {
 		const cmdFolder = cmdDir[i];
 		counter += cmdFolder;
 
-		(async function typeLoop() {
-			const cmdFolders = (
-				await readdir(`./src/interactions/commands/${cmdFolder}`)
-			).filter((value, index, array) => array.indexOf(value) === index);
+		const cmdFolders = (
+			await readdir(`./src/interactions/commands/${cmdFolder}`)
+		).filter((value, index, array) => array.indexOf(value) === index);
 
-			for (let j = 0; j < cmdFolders.length; j++) {
-				const cmdFile = cmdFolders[i];
+		for (let j = 0; j < cmdFolders.length; j++) {
+			const cmdFile = cmdFolders[i];
+			counter++;
 
-				(async function cmdLoop() {
-					const cmd =
-						await new (require(`../interactions/commands/${cmdFolder}/${cmdFile}`))(
-							client
-						);
+			const cmd =
+				await new (require(`../interactions/commands/${cmdFolder}/${cmdFile}`))(
+					client
+				);
 
-					try {
-						client.slashCommands.set(cmd.config.name, cmd);
-					} catch (e) {
-						client.logger.error(
-							`Failed to load command: ${cmd.config.name} - ${e.message}`
-						);
-						if (client.config.debug) client.logger.debug(e);
-					}
-
-					client.logger.log(`Loaded Command: ${cmd.config.name}`);
-				})();
+			try {
+				client.slashCommands.set(cmd.config.name, cmd);
+			} catch (e) {
+				client.logger.error(
+					`Failed to load command: ${cmd.config.name} - ${e.message}`
+				);
+				if (client.config.debug) client.logger.debug(e);
 			}
-		})();
+
+			client.logger.log(`Loaded Command: ${cmd.config.name}`);
+		}
 	}
 
 	client.logger.log(
