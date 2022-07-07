@@ -12,8 +12,8 @@ const Ilviwyn = new Client();
 		"commands",
 		"context-menus",
 		"buttons",
-		"modals", // TODO
-		"select-menus", // TODO
+		"modals",
+		"select-menus",
 	];
 
 	for (let index = 0; index < interactions.length; index++) {
