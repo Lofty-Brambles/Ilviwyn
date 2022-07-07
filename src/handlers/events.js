@@ -27,7 +27,18 @@ module.exports = async client => {
 			);
 
 			try {
-				await client.on(name, ...args => event.run(client, ...args));
+				if (event.config.once) {
+					await client.once(
+						name,
+						...args => event.run(client, ...args)
+					);
+				} else {
+					await client.on(
+						name,
+						// eslint-disable-next-line no-return-await
+						async (...args) => await event.run(client, ...args)
+					);
+				}
 
 				client.logger.log(`Loaded event: ${name}`);
 			} catch (e) {

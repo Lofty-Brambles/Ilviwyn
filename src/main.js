@@ -62,9 +62,9 @@ const Ilviwyn = new Client();
 	Ilviwyn.mongoose.init(Ilviwyn);
 
 	const { token } = Ilviwyn.config;
-	Ilviwyn.login(token)
-		.then(() => Ilviwyn.logger.ready("Ilviwyn is READY to conquer!"))
-		.catch(e => Ilviwyn.logger.error(`Failed to log in - ${e}`));
+	Ilviwyn.login(token).catch(e =>
+		Ilviwyn.logger.error(`Failed to log in - ${e}`)
+	);
 })();
 
 process.on("unhandledRejection", e => {
