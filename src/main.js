@@ -59,7 +59,7 @@ const Ilviwyn = new Client();
 		}
 	})();
 
-	Ilviwyn.mongoose.init(Ilviwyn);
+	// Ilviwyn.mongoose.init(Ilviwyn); TODO
 
 	const { token } = Ilviwyn.config;
 	Ilviwyn.login(token).catch(e =>
