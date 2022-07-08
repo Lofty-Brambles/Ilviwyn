@@ -1,6 +1,3 @@
-# Config File
-src/admin
-
 # Logs
 logs
 *.log
@@ -105,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Config File
+src/admin/config.js
