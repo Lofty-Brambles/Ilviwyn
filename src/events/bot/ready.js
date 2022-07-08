@@ -18,7 +18,7 @@ module.exports = class extends Event {
 
 			for (let i = 0; i < guildCache.length; i++) {
 				const guild = guildCache[i];
-				await guild.fetchSettings();
+				await guild.fetchDtls();
 			}
 		}, 300000);
 
