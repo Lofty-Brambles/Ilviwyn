@@ -42,7 +42,7 @@ const Ilviwyn = new Client();
 				Routes.applicationGuildCommands(
 					Ilviwyn.config.clientID,
 					Ilviwyn.config.testGuildID
-				), // (`)
+				), // (1)
 				// Routes.applicationGuildCommands(Ilviwyn.config.clientID), (2)
 
 				{ body: commandJSONdata }

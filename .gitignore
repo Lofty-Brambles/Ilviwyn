@@ -1,3 +1,6 @@
+# Config File
+src/admin
+
 # Logs
 logs
 *.log
