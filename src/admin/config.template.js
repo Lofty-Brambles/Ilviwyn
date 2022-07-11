@@ -3,5 +3,6 @@ module.exports = {
 	token: "",
 	clientID: "",
 	testGuildID: "",
+	mongoURL: "",
 	debug: false,
 };
