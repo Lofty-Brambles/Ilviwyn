@@ -1,0 +1,12 @@
+{
+	"tabWidth": 2,
+	"useTabs": true,
+	"endOfLine": "lf",
+	"trailingComma": "all",
+	"overrides": [
+		{
+			"files": ["*.json", "*.md", "*.toml", "*.yml"],
+			"options": { "useTabs": false, "trailingComma": "es5" }
+		}
+	]
+}
