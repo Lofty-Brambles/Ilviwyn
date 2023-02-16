@@ -21,7 +21,7 @@ jobs:
           node-version: 18.x
           cache: "pnpm"
       - run: pnpm install
-      - run: format:ci
+      - run: pnpm run format:ci
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "[ci] formating files..."
